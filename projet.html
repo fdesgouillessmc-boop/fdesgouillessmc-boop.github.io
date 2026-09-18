@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Projet Mozart & Voltaire : une correspondance fraternelle simple, interactive et respectueuse." />
+  <title>Projet · Mozart & Voltaire</title>
+  <style>
+    :root{--night:#07111f;--ink:#0c1b2d;--blue:#102b49;--gold:#d8b36a;--pale:#f2e6c8;--white:#fffdf7;--muted:#aeb9c5;--green:#8dc6a7;--orange:#e7ba76;--red:#d99090;--line:rgba(216,179,106,.25)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--night);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 18% 8%,rgba(42,86,129,.38),transparent 31%),radial-gradient(circle at 82% 28%,rgba(216,179,106,.12),transparent 28%),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,auto,42px 42px,42px 42px;mask-image:linear-gradient(to bottom,#000 0%,transparent 82%)}
+    a{color:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:2}.brand{display:flex;gap:13px;align-items:center;text-decoration:none}.mark{width:43px;height:43px;border:1px solid var(--gold);display:grid;place-items:center;transform:rotate(45deg);border-radius:5px;background:rgba(216,179,106,.06)}.mark span{transform:rotate(-45deg);font-family:Georgia,serif;color:var(--gold);font-size:15px}.brand-copy{font-family:Georgia,serif;letter-spacing:.09em}.brand-copy small{display:block;color:var(--muted);font:500 9px/1.3 Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase}.back{font-size:13px;text-decoration:none;color:var(--pale);border:1px solid var(--line);padding:10px 15px;border-radius:999px;transition:.2s}.back:hover{background:rgba(216,179,106,.1);border-color:var(--gold)}
+    .hero{min-height:720px;padding:96px 0 72px;position:relative;display:grid;align-items:center}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}.eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:11px;font-weight:750;letter-spacing:.2em;text-transform:uppercase}.eyebrow:before{content:"";width:44px;height:1px;background:var(--gold)}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}h1{font-size:clamp(50px,7.5vw,94px);line-height:.94;letter-spacing:-.045em;margin:25px 0 30px;max-width:820px}h1 em{color:var(--gold);font-weight:400}.intro{max-width:650px;color:#d1d8df;font-size:18px}.status{display:inline-flex;align-items:center;gap:9px;margin-top:26px;color:var(--pale);font-size:12px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025)}.status i{width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 6px rgba(216,179,106,.1)}
+    .orbit{aspect-ratio:1;position:relative;display:grid;place-items:center}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid var(--line);border-radius:50%;inset:4%;animation:spin 28s linear infinite}.orbit:after{inset:19%;border-style:dashed;animation-direction:reverse;animation-duration:22s}.core{width:45%;aspect-ratio:1;border:1px solid var(--gold);transform:rotate(45deg);display:grid;place-items:center;background:linear-gradient(145deg,rgba(216,179,106,.14),rgba(9,24,40,.82));box-shadow:0 0 90px rgba(216,179,106,.1)}.core div{transform:rotate(-45deg);text-align:center}.core strong{display:block;font:400 clamp(40px,6vw,72px)/1 Georgia,serif;color:var(--gold)}.core small{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}.node{position:absolute;width:92px;height:92px;border-radius:50%;border:1px solid var(--line);background:#0a192b;display:grid;place-items:center;text-align:center;color:var(--pale);font-size:11px;letter-spacing:.06em;box-shadow:0 18px 50px rgba(0,0,0,.25)}.node b{display:block;color:var(--gold);font-size:19px}.n1{top:3%;left:18%}.n2{right:0;top:38%}.n3{bottom:2%;left:30%}.n4{left:-1%;top:48%}@keyframes spin{to{transform:rotate(360deg)}}
+    section{padding:110px 0;position:relative}.section-head{display:grid;grid-template-columns:.55fr 1.45fr;gap:50px;margin-bottom:58px}.kicker{color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase}.section-head h2{font-size:clamp(38px,5vw,64px);line-height:1.05;margin:0}.section-head p{color:var(--muted);font-size:17px;max-width:700px;margin:8px 0 0}.soft{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008));border-block:1px solid rgba(255,255,255,.05)}
+    .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:0}.step{padding:26px 20px 24px;border-top:1px solid var(--line);position:relative}.step:after{content:"→";position:absolute;right:-6px;top:24px;color:var(--gold);z-index:2}.step:last-child:after{display:none}.num{color:var(--gold);font:400 30px Georgia,serif}.step h3{font-size:20px;margin:18px 0 8px}.step p{color:var(--muted);font-size:13px;margin:0}.gate{border-color:var(--gold);background:linear-gradient(180deg,rgba(216,179,106,.1),transparent)}.gate .num:after{content:" validation humaine";font:700 8px Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-left:7px;color:var(--pale)}
+    .demo-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}.letter,.rsvp{border:1px solid var(--line);background:rgba(8,20,34,.8);border-radius:22px;padding:30px;box-shadow:0 28px 70px rgba(0,0,0,.2)}.letter{transform:rotate(-1deg)}.letter-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.08)}.sender{display:flex;gap:12px;align-items:center}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--pale);color:var(--ink);font:700 14px Georgia,serif}.sender strong,.sender small{display:block}.sender small{color:var(--muted);font-size:11px}.tag{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:6px 9px}.letter h3{font-size:28px;margin:24px 0 8px}.letter p{color:var(--muted);font-size:14px}.extract{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}.extract div{border:1px solid rgba(255,255,255,.07);padding:12px;border-radius:10px}.extract small{display:block;color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase}.extract b{font-size:13px}.verified{display:flex;gap:8px;align-items:center;margin-top:18px;color:var(--green);font-size:12px}.verified:before{content:"✓";width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:rgba(141,198,167,.12)}
+    .demo-label{display:flex;justify-content:space-between;align-items:center}.demo-label span:first-child{color:var(--gold);font-size:10px;letter-spacing:.15em;text-transform:uppercase}.demo-label span:last-child{color:var(--muted);font-size:10px}.rsvp h3{font-size:36px;line-height:1.08;margin:20px 0 8px}.rsvp .details{color:#d2d9e1;margin-bottom:26px}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.choice{appearance:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.025);color:var(--white);padding:18px 10px;border-radius:12px;cursor:pointer;font-weight:750;transition:.2s}.choice:hover,.choice.active{transform:translateY(-2px);border-color:var(--gold);background:rgba(216,179,106,.12)}.choice.present.active{border-color:var(--green);background:rgba(141,198,167,.12)}.choice.absent.active{border-color:var(--red);background:rgba(217,144,144,.12)}.choice small{display:block;font-weight:500;color:var(--muted);margin-top:3px}.reply{height:43px;margin-top:16px;color:var(--pale);font-size:13px;display:flex;align-items:center}.calendar{width:100%;border:1px solid var(--gold);background:var(--gold);color:var(--night);padding:15px;border-radius:12px;font-weight:800;cursor:pointer;transition:.2s}.calendar:hover{background:var(--pale)}.calendar:disabled{opacity:.35;cursor:not-allowed}.counts{display:flex;gap:20px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}.count b{display:block;font:400 24px Georgia,serif;color:var(--gold)}.count small{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em}.local-note{font-size:10px;color:var(--muted);margin-top:15px}
+    .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.principle{border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:25px;background:rgba(255,255,255,.02)}.principle .icon{color:var(--gold);font:400 28px Georgia,serif}.principle h3{font-size:20px;margin:18px 0 8px}.principle p{color:var(--muted);font-size:13px;margin:0}
+    .roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.phase{padding:26px;border-left:1px solid var(--line);min-height:200px}.phase:first-child{border-left-color:var(--green)}.phase small{color:var(--gold);font-size:10px;letter-spacing:.15em;text-transform:uppercase}.phase h3{font-size:23px;margin:15px 0}.phase p{font-size:13px;color:var(--muted)}.phase .state{display:inline-block;margin-top:10px;padding:6px 9px;border-radius:999px;border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:9px;letter-spacing:.1em;text-transform:uppercase}.phase:first-child .state{color:var(--green);border-color:rgba(141,198,167,.25)}
+    .closing{text-align:center;padding:120px 20px}.closing .symbol{font:400 58px Georgia,serif;color:var(--gold)}.closing h2{font-size:clamp(40px,6vw,70px);line-height:1.05;margin:24px auto;max-width:870px}.closing p{color:var(--muted);max-width:680px;margin:0 auto 35px}.cta{display:inline-block;text-decoration:none;background:var(--gold);color:var(--night);padding:16px 22px;border-radius:999px;font-weight:800}.cta:hover{background:var(--pale)}footer{border-top:1px solid var(--line);padding:35px 0 50px;color:var(--muted);font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:20px}.footer-row a{color:var(--pale)}
+    @media(max-width:900px){.hero-grid,.section-head,.demo-grid{grid-template-columns:1fr}.hero{padding-top:65px}.orbit{width:min(500px,90%);margin:20px auto 0}.flow{grid-template-columns:repeat(2,1fr)}.step:after{display:none}.principles,.roadmap{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:580px){.wrap{width:min(100% - 24px,1180px)}.topbar{height:68px}.brand-copy{font-size:13px}.brand-copy small{display:none}.mark{width:35px;height:35px}.back{font-size:11px;padding:8px 11px}.hero{min-height:auto;padding:60px 0 72px}.hero-grid{gap:36px}h1{font-size:52px}.intro{font-size:16px}.orbit{width:100%;margin-top:15px}.node{width:69px;height:69px;font-size:8px}.node b{font-size:15px}.section-head{gap:15px;margin-bottom:36px}section{padding:78px 0}.flow,.principles,.roadmap{grid-template-columns:1fr}.step{border-left:1px solid var(--line);border-top:0;padding-left:28px}.demo-grid{gap:16px}.letter,.rsvp{padding:21px;border-radius:17px}.letter{transform:none}.extract{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.choice{padding:13px}.counts{justify-content:space-between;gap:8px}.footer-row{display:block}.footer-row span{display:block;margin-top:10px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.orbit:before,.orbit:after{animation:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="./"><span class="mark"><span>M·V</span></span><span class="brand-copy">MOZART &amp; VOLTAIRE<small>Grand Orient de Suisse · Genève</small></span></a>
+    <a class="back" href="./">← Retour au site</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Projet · seconde étape</div>
+          <h1>Faire circuler la <em>Lumière.</em></h1>
+          <p class="intro">Un outil fraternel pour recevoir les invitations des autres Loges, les rendre lisibles en un instant et permettre à chaque Frère de répondre simplement — puis d’ajouter l’événement à son calendrier.</p>
+          <div class="status"><i></i> Prototype interactif · aucune automatisation active</div>
+        </div>
+        <div class="orbit" aria-label="Correspondance entre les Loges, les membres et leurs calendriers">
+          <div class="node n1"><span><b>✉</b>Invitation</span></div><div class="node n2"><span><b>✓</b>Validation</span></div><div class="node n3"><span><b>□</b>Calendrier</span></div><div class="node n4"><span><b>3</b>Réponses</span></div>
+          <div class="core"><div><strong>M·V</strong><small>au centre du lien</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="parcours">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">De la boîte mail au Temple</div><div><h2>Une invitation reçue.<br>Une décision simple.</h2><p>L’outil transforme une correspondance dispersée en un parcours clair, sans jamais retirer la décision à l’humain.</p></div></div>
+        <div class="flow">
+          <article class="step"><div class="num">01</div><h3>Réception</h3><p>Le message arrive sur l’adresse officielle de la Loge.</p></article>
+          <article class="step"><div class="num">02</div><h3>Lecture</h3><p>Date, lieu, objet et délai de réponse sont proposés automatiquement.</p></article>
+          <article class="step gate"><div class="num">03</div><h3>Contrôle</h3><p>Un responsable vérifie et autorise la diffusion.</p></article>
+          <article class="step"><div class="num">04</div><h3>Invitation</h3><p>Chaque membre volontaire reçoit une présentation concise.</p></article>
+          <article class="step"><div class="num">05</div><h3>Réponse</h3><p>Présent, peut-être ou indisponible, en un geste.</p></article>
+          <article class="step"><div class="num">06</div><h3>Calendrier</h3><p>L’événement peut être ajouté au calendrier personnel.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Démonstration</div><div><h2>Essaie le parcours.</h2><p>Voici ce qu’un Frère pourrait recevoir après validation d’une invitation. La réponse ci-dessous reste uniquement dans ton navigateur.</p></div></div>
+        <div class="demo-grid">
+          <article class="letter">
+            <div class="letter-top"><div class="sender"><span class="avatar">L∴G∴</span><span><strong>La Lumière de Genève</strong><small>Correspondance fraternelle</small></span></div><span class="tag">message reçu</span></div>
+            <h3>Tenue ouverte &amp; planche</h3><p>Nos Frères invitent Mozart &amp; Voltaire à une soirée de rencontre autour d’une planche suivie d’agapes.</p>
+            <div class="extract"><div><small>Date</small><b>Jeudi 22 octobre 2026</b></div><div><small>Heure</small><b>19 h 30</b></div><div><small>Lieu</small><b>Genève · Temple central</b></div><div><small>Réponse souhaitée</small><b>Avant le 15 octobre</b></div></div>
+            <div class="verified">Informations contrôlées par un responsable M·V</div>
+          </article>
+          <article class="rsvp">
+            <div class="demo-label"><span>Ton invitation</span><span>Démonstration locale</span></div>
+            <h3>Seras-tu des nôtres&nbsp;?</h3><p class="details">Jeudi 22 octobre · 19 h 30 · Genève</p>
+            <div class="choices" role="group" aria-label="Réponse à l'invitation">
+              <button class="choice present" data-answer="present">Je serai présent<small>Ajouter ensuite au calendrier</small></button>
+              <button class="choice maybe" data-answer="maybe">Peut-être<small>Me rappeler avant la clôture</small></button>
+              <button class="choice absent" data-answer="absent">Indisponible<small>Décliner en toute simplicité</small></button>
+            </div>
+            <div class="reply" id="reply">Choisis une réponse pour voir l’expérience.</div>
+            <button class="calendar" id="calendar" disabled>Ajouter à mon calendrier (.ics)</button>
+            <div class="counts" aria-label="Réponses de démonstration"><span class="count"><b id="yesCount">12</b><small>présents</small></span><span class="count"><b id="maybeCount">4</b><small>peut-être</small></span><span class="count"><b id="noCount">3</b><small>indisponibles</small></span></div>
+            <p class="local-note">Prototype : aucun nom, aucune réponse et aucune donnée ne sont transmis ou enregistrés.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="principes">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Principes de confiance</div><div><h2>Automatique dans l’effort.<br>Humain dans la décision.</h2><p>L’outil doit rapprocher les Frères, pas décider à leur place. La discrétion et le consentement sont intégrés dès la conception.</p></div></div>
+        <div class="principles">
+          <article class="principle"><div class="icon">I</div><h3>Validation obligatoire</h3><p>Aucune invitation n’est envoyée à tous sans le contrôle d’un responsable désigné.</p></article>
+          <article class="principle"><div class="icon">II</div><h3>Participation choisie</h3><p>Seuls les membres qui le souhaitent reçoivent les sollicitations et peuvent se désinscrire.</p></article>
+          <article class="principle"><div class="icon">III</div><h3>Calendrier privé</h3><p>L’outil ne lit jamais un agenda personnel. Chaque Frère choisit lui-même ce qu’il ajoute.</p></article>
+          <article class="principle"><div class="icon">IV</div><h3>Information minimale</h3><p>Les réponses utiles à l’organisation sont conservées sobrement, sans collecte superflue.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="feuille-route">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Feuille de route</div><div><h2>Construire par degrés.</h2><p>Nous présentons d’abord le nouveau site. Le service de correspondance viendra ensuite, après discussion avec les Frères et accès à l’adresse officielle.</p></div></div>
+        <div class="roadmap">
+          <article class="phase"><small>Phase 1</small><h3>Le nouveau visage</h3><p>Site public, contenus de la Loge et espace discret pour recueillir les avis.</p><span class="state">en présentation</span></article>
+          <article class="phase"><small>Phase 2</small><h3>La boîte de la Loge</h3><p>Connexion contrôlée à l’adresse Mozart &amp; Voltaire et classement des correspondances.</p><span class="state">après accès</span></article>
+          <article class="phase"><small>Phase 3</small><h3>Invitations &amp; réponses</h3><p>Questionnaire présent / peut-être / absent, synthèse et ajout au calendrier.</p><span class="state">à co-construire</span></article>
+          <article class="phase"><small>Phase 4</small><h3>Réseau inter-Loges</h3><p>Vue partagée des occasions de rencontre, des portes ouvertes et des initiations.</p><span class="state">vision</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing soft">
+      <div class="symbol">△</div><h2>Une technologie discrète au service d’une présence réelle.</h2><p>Cette page est une base de discussion. Chaque avis peut infléchir le projet avant que la moindre automatisation ne soit activée.</p>
+      <a class="cta" href="mailto:contact@mozartetvoltaire.ch?subject=Mon%20avis%20sur%20le%20projet%20interactif%20M%26V&body=Mon%20avis%20sur%20le%20projet%20%3A%0A%0ACe%20que%20je%20trouve%20utile%20%3A%0A%0ACe%20que%20je%20changerais%20%3A%0A">Donner mon avis sur ce projet</a>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><span>R∴ L∴ Mozart et Voltaire · Genève</span><span>Page de travail · <a href="./">revenir au site principal</a></span></div></footer>
+
+  <script>
+    (() => {
+      const buttons = [...document.querySelectorAll('.choice')];
+      const reply = document.getElementById('reply');
+      const calendar = document.getElementById('calendar');
+      const counts = {present: document.getElementById('yesCount'), maybe: document.getElementById('maybeCount'), absent: document.getElementById('noCount')};
+      const messages = {present:'Merci. Ta présence est indiquée dans cette démonstration.',maybe:'Très bien. Le futur outil pourra te rappeler avant la clôture.',absent:'Réponse prise en compte localement. Merci d’avoir répondu.'};
+      let selected = null;
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        if (selected) counts[selected].textContent = String(Number(counts[selected].textContent) - 1);
+        selected = button.dataset.answer;
+        counts[selected].textContent = String(Number(counts[selected].textContent) + 1);
+        buttons.forEach((item) => item.classList.toggle('active', item === button));
+        reply.textContent = messages[selected];
+        calendar.disabled = selected !== 'present';
+      }));
+      calendar.addEventListener('click', () => {
+        const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Mozart et Voltaire//Projet//FR','BEGIN:VEVENT','UID:demo-20261022@mozartetvoltaire.ch','DTSTAMP:20260918T180000Z','DTSTART:20261022T173000Z','DTEND:20261022T210000Z','SUMMARY:Tenue ouverte - La Lumiere de Geneve','LOCATION:Geneve - Temple central','DESCRIPTION:Invitation de demonstration du projet Mozart et Voltaire.','END:VEVENT','END:VCALENDAR'].join('\r\n');
+        const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'})); link.download = 'invitation-mozart-voltaire.ics'; link.click(); URL.revokeObjectURL(link.href);
+        calendar.textContent = 'Invitation calendrier téléchargée ✓';
+      });
+    })();
+  </script>
+</body>
+</html>
