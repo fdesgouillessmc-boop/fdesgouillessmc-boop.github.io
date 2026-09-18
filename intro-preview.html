@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#050d16" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Mozart &amp; Voltaire · Ouverture</title>
+  <style>
+    :root{--gold:#d8b76c;--ivory:#efe3c9;--night:#050d16;--duration:4.8s;color-scheme:dark;font-family:"Avenir Next",Avenir,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--night)}
+    .intro{position:fixed;inset:0;isolation:isolate;background:radial-gradient(circle at 50% 44%,#173147 0,#081624 42%,#030910 100%);animation:exit var(--duration) ease both}
+    .intro:before{content:"";position:absolute;inset:0;z-index:20;pointer-events:none;opacity:.11;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E")}
+    .intro:after{content:"";position:absolute;inset:0;z-index:19;pointer-events:none;box-shadow:inset 0 0 18vw 5vw #000c}
+    .brand{position:absolute;top:max(20px,env(safe-area-inset-top));left:max(22px,env(safe-area-inset-left));z-index:30;display:flex;align-items:center;gap:12px;color:var(--ivory);font-family:Baskerville,Georgia,serif;font-size:16px;letter-spacing:.04em;animation:brand 4.8s ease both}.brand i{width:36px;height:36px;border:1px solid #d8b76c99;display:grid;place-items:center;color:var(--gold);font-size:11px;font-style:normal;transform:rotate(45deg)}.brand i span{transform:rotate(-45deg)}
+    .skip{position:absolute;z-index:31;top:max(22px,env(safe-area-inset-top));right:max(22px,env(safe-area-inset-right));border:0;border-bottom:1px solid #d8b76c66;padding:7px 0;color:#9eb0b8;background:transparent;text-decoration:none;text-transform:uppercase;font-size:9px;letter-spacing:.16em}
+    .world{position:absolute;inset:-8%;z-index:2;transform-style:preserve-3d;animation:flight 4.8s cubic-bezier(.5,.02,.15,1) both}
+    .halo{position:absolute;left:50%;top:48%;width:min(70vw,850px);aspect-ratio:1;border:1px solid #d8b76c20;transform:translate(-50%,-50%) rotate(45deg);animation:halo 4.8s ease both}.halo:after{content:"";position:absolute;inset:16%;border:1px dashed #a9c7d128}
+    .portrait{position:absolute;top:11%;width:min(33vw,460px);height:72%;margin:0;overflow:hidden;border:1px solid #d8b76c44;background:#091827;box-shadow:0 40px 90px #0009;transform-style:preserve-3d}.portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,#06111df2 100%)}.portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.28) contrast(1.08);mix-blend-mode:luminosity}.mozart{left:12%;border-radius:48% 48% 8px 8px;animation:mozart 4.8s ease both}.voltaire{right:12%;border-radius:48% 48% 8px 8px;animation:voltaire 4.8s ease both}.voltaire img{object-position:center top}.name{position:absolute;z-index:3;left:24px;right:24px;bottom:23px}.name small{display:block;color:#c4a65f;font-size:8px;letter-spacing:.2em;text-transform:uppercase}.name strong{color:var(--ivory);font:400 clamp(28px,3.3vw,48px)/1.1 Baskerville,Georgia,serif}
+    .sweep{position:absolute;z-index:4;top:-20%;bottom:-20%;left:-30%;width:18%;background:linear-gradient(90deg,transparent,#ffe29a45,transparent);filter:blur(13px);transform:rotate(12deg);animation:sweep 4.8s ease both}
+    .symbols{position:absolute;z-index:8;left:50%;top:48%;width:min(47vw,620px);height:min(47vw,620px);overflow:visible;transform:translate(-50%,-50%);filter:drop-shadow(0 0 13px #d8b76c55)}.tool{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:950;stroke-dashoffset:950;animation:draw 4.8s ease both}.fine{stroke:#ecd99fc4;stroke-width:1.5}.hinge{fill:#06111d;stroke:#e6c97d;stroke-width:3;opacity:0;animation:hinge 4.8s ease both}.plumb-group{transform-origin:360px 177px;animation:pendulum 1.05s ease-in-out 3.15s 2.1 alternate both}.spark{fill:#fff1ba;opacity:0;filter:drop-shadow(0 0 11px #ffe08b);animation:spark 4.8s ease both}
+    .story{position:absolute;inset:0;z-index:12;pointer-events:none}.line{position:absolute;left:50%;bottom:14%;width:min(88vw,1020px);text-align:center;opacity:0;transform:translate(-50%,16px)}.line small{display:block;margin-bottom:10px;color:#c6a95f;font-size:9px;letter-spacing:.22em;text-transform:uppercase}.line strong{color:var(--ivory);font:400 clamp(31px,5.5vw,75px)/.98 Baskerville,Georgia,serif;letter-spacing:-.03em}.one{animation:lineOne 4.8s ease both}.two{animation:lineTwo 4.8s ease both}.three{bottom:12%;animation:lineThree 4.8s ease both}.three em{color:var(--gold);font-style:normal}
+    .progress{position:absolute;z-index:24;left:max(22px,env(safe-area-inset-left));right:max(22px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));height:1px;background:#dfc98f24}.progress span{display:block;width:100%;height:100%;background:var(--gold);transform-origin:left;animation:progress 4.8s linear both}
+    @keyframes flight{0%{opacity:0;transform:perspective(1200px) translate3d(25vw,5vh,200px) scale(1.38)}5%{opacity:1}29%{transform:perspective(1200px) translate3d(9vw,-2vh,80px) scale(1.13)}56%{transform:perspective(1200px) translate3d(-10vw,-2vh,55px) scale(1.08)}72%{transform:perspective(1200px) translate3d(0,-3vh,0) scale(.9)}94%{opacity:1;transform:perspective(1200px) translate3d(0,-3vh,-30px) scale(.82)}100%{opacity:0;transform:perspective(1200px) translate3d(0,-4vh,-55px) scale(.77)}}
+    @keyframes mozart{0%,8%{opacity:1;transform:rotateY(-13deg) rotateZ(-2deg) translateZ(65px)}39%{opacity:.86;transform:rotateY(-2deg) rotateZ(-1deg)}67%,95%{opacity:.35;transform:rotateY(7deg) translateZ(-25px)}100%{opacity:0}}@keyframes voltaire{0%,26%{opacity:.22;transform:rotateY(10deg) rotateZ(2deg) translateZ(-30px)}54%{opacity:1;transform:rotateY(0) rotateZ(1deg) translateZ(45px)}72%,95%{opacity:.4;transform:rotateY(-6deg) translateZ(-15px)}100%{opacity:0}}
+    @keyframes sweep{0%,4%{left:-30%;opacity:0}15%{opacity:1}55%{left:58%;opacity:.7}76%{left:114%;opacity:1}83%,100%{left:125%;opacity:0}}@keyframes draw{0%,57%{stroke-dashoffset:950;opacity:0}64%{opacity:.4}82%,94%{stroke-dashoffset:0;opacity:.95}100%{stroke-dashoffset:0;opacity:0}}@keyframes hinge{0%,67%{opacity:0;transform:scale(.45);transform-origin:360px 177px}77%,94%{opacity:1;transform:scale(1);transform-origin:360px 177px}100%{opacity:0}}@keyframes pendulum{0%{transform:rotate(-7deg)}100%{transform:rotate(7deg)}}@keyframes spark{0%,72%{opacity:0}78%{opacity:1}86%{opacity:.25}92%{opacity:1}100%{opacity:0}}@keyframes halo{0%{opacity:.2;transform:translate(-50%,-50%) rotate(25deg) scale(.85)}72%{opacity:.6}95%{opacity:1;transform:translate(-50%,-50%) rotate(45deg) scale(1.08)}100%{opacity:0;transform:translate(-50%,-50%) rotate(47deg) scale(1.14)}}
+    @keyframes lineOne{0%,5%{opacity:0}10%,25%{opacity:1;transform:translate(-50%,0)}32%,100%{opacity:0;transform:translate(-50%,-14px)}}@keyframes lineTwo{0%,34%{opacity:0}41%,56%{opacity:1;transform:translate(-50%,0)}63%,100%{opacity:0;transform:translate(-50%,-14px)}}@keyframes lineThree{0%,69%{opacity:0}76%,92%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-10px)}}@keyframes progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes brand{0%,6%{opacity:0}12%,90%{opacity:1}100%{opacity:0}}@keyframes exit{0%,94%{filter:none}100%{filter:brightness(1.45)}}
+    @media(max-width:720px){.brand{top:max(14px,env(safe-area-inset-top));left:16px;font-size:14px}.brand i{width:32px;height:32px}.skip{top:max(15px,env(safe-area-inset-top));right:16px}.world{inset:-2% -38%}.portrait{top:17%;width:35%;height:54%}.mozart{left:21%}.voltaire{right:21%}.name{left:12px;right:12px;bottom:14px}.name strong{font-size:24px}.symbols{top:47%;width:80vw;height:80vw}.line{bottom:18%;width:calc(100% - 30px)}.line strong{font-size:clamp(31px,10.8vw,51px)}.three{bottom:16%}}
+    @media(prefers-reduced-motion:reduce){.intro,.brand,.world,.halo,.portrait,.sweep,.tool,.hinge,.plumb-group,.spark,.line,.progress span{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important}.world{opacity:1;transform:scale(.85)}.tool{stroke-dashoffset:0;opacity:.9}.three{opacity:1;transform:translate(-50%,0)}}
+  </style>
+</head>
+<body>
+  <main class="intro" aria-label="Séquence d’ouverture Mozart et Voltaire">
+    <div class="brand"><i><span>M·V</span></i><span>Mozart &amp; Voltaire</span></div>
+    <a class="skip" href="./?intro=done">Passer</a>
+    <div class="world" aria-hidden="true">
+      <div class="halo"></div>
+      <figure class="portrait mozart"><img src="portraits/mozart-doris-stock.jpg" alt="" /><figcaption class="name"><small>L’harmonie</small><strong>Mozart</strong></figcaption></figure>
+      <figure class="portrait voltaire"><img src="portraits/voltaire-portrait.jpg" alt="" /><figcaption class="name"><small>L’esprit libre</small><strong>Voltaire</strong></figcaption></figure>
+      <div class="sweep"></div>
+      <svg class="symbols" viewBox="0 0 720 720">
+        <path class="tool" d="M170 265 L170 562 L545 562"/><path class="tool fine" d="M220 315 L220 512 L482 512"/>
+        <path class="tool" d="M350 177 C320 255 270 390 205 562"/><path class="tool" d="M370 177 C400 255 450 390 515 562"/><path class="tool fine" d="M285 390 Q360 434 435 390"/>
+        <circle class="hinge" cx="360" cy="177" r="27"/>
+        <g class="plumb-group"><path class="tool fine" d="M360 177 L360 512"/><path class="tool" d="M360 494 L382 530 L360 570 L338 530 Z"/><circle class="spark" cx="360" cy="570" r="5"/></g>
+        <circle class="spark" cx="360" cy="177" r="7"/>
+      </svg>
+    </div>
+    <div class="story"><div class="line one"><small>Mozart</small><strong>L’harmonie met le monde<br>en mouvement.</strong></div><div class="line two"><small>Voltaire</small><strong>L’esprit libre éclaire<br>le chemin.</strong></div><div class="line three"><small>Mozart &amp; Voltaire · Genève</small><strong>Penser <em>librement.</em><br>Agir fraternellement.</strong></div></div>
+    <div class="progress" aria-hidden="true"><span></span></div>
+  </main>
+  <script>
+    const destination='./?intro=done';
+    const hold=new URLSearchParams(location.search).has('hold');
+    if(!hold){setTimeout(()=>location.replace(destination),4950)}
+  </script>
+</body>
+</html>
