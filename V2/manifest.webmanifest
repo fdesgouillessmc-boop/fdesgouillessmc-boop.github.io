@@ -1,0 +1,19 @@
+{
+  "name": "Mozart & Voltaire — Laboratoire V2",
+  "short_name": "M·V V2",
+  "description": "Dignité, humanisme et fraternité — une expérience numérique genevoise.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#06111d",
+  "theme_color": "#06111d",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
