@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'mv-v2-preview-'
-const CACHE = CACHE_PREFIX + 'multipage-1'
+const CACHE = CACHE_PREFIX + 'video-20260919'
 const BASE = new URL('./', self.location.href)
 const CORE = ['./', 'manifest.webmanifest', 'icon.svg', 'mozart-voltaire-3d-v2.png'].map((path) => new URL(path, BASE).href)
 self.addEventListener('install', (event) => {
@@ -11,9 +11,10 @@ self.addEventListener('activate', (event) => {
 })
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url)
+  if (event.request.headers.has('range') || /\.(mp4|webm)$/i.test(url.pathname)) return
   if (event.request.method !== 'GET' || url.origin !== BASE.origin || !url.pathname.startsWith(BASE.pathname)) return
   event.respondWith(fetch(event.request).then((response) => {
-    if (response.ok && !response.redirected) {
+    if (response.status === 200 && !response.redirected) {
       const copy = response.clone()
       event.waitUntil(caches.open(CACHE).then((cache) => cache.put(event.request, copy)))
     }
