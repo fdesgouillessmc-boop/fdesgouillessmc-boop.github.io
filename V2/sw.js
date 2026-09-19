@@ -1,7 +1,7 @@
 const CACHE_PREFIX = 'mv-v2-preview-'
-const CACHE = CACHE_PREFIX + 'video-20260919'
+const CACHE = CACHE_PREFIX + 'agenda-20260919-a'
 const BASE = new URL('./', self.location.href)
-const CORE = ['./', 'manifest.webmanifest', 'icon.svg', 'mozart-voltaire-3d-v2.png'].map((path) => new URL(path, BASE).href)
+const CORE = ['./', 'mon-agenda.html', 'manifest.webmanifest', 'agenda.webmanifest', 'mv-icon-192.png', 'mv-icon-512.png'].map((path) => new URL(path, BASE).href)
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE)))
   self.skipWaiting()

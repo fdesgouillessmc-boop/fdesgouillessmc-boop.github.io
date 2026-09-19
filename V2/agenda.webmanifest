@@ -1,0 +1,16 @@
+{
+  "id": "/V2/mon-agenda.html",
+  "name": "Mon carnet personnel",
+  "short_name": "Mon carnet",
+  "description": "Carnet personnel local, sans synchronisation ni transmission.",
+  "start_url": "./mon-agenda.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#06111d",
+  "theme_color": "#06111d",
+  "lang": "fr",
+  "icons": [
+    {"src":"./mv-icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"./mv-icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"}
+  ]
+}
