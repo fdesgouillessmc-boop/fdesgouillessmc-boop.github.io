@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'mv-v2-preview-'
-const CACHE = CACHE_PREFIX + 'symbols-1'
+const CACHE = CACHE_PREFIX + 'multipage-1'
 const BASE = new URL('./', self.location.href)
 const CORE = ['./', 'manifest.webmanifest', 'icon.svg', 'mozart-voltaire-3d-v2.png'].map((path) => new URL(path, BASE).href)
 self.addEventListener('install', (event) => {
@@ -18,5 +18,5 @@ self.addEventListener('fetch', (event) => {
       event.waitUntil(caches.open(CACHE).then((cache) => cache.put(event.request, copy)))
     }
     return response
-  }).catch(async () => (await caches.match(event.request)) || (event.request.mode === 'navigate' && await caches.match(BASE.href)) || Response.error()))
+  }).catch(async () => (await caches.match(event.request)) || Response.error()))
 })
